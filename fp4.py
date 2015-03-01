@@ -9,6 +9,8 @@ def hello():
                            shown="hidden")
 
 def compensation(x):
+    if x <= 0.5:
+        return x
     return 66.86823338 * 1.04081939 ** x - 67.19686994
 
 @app.route("/calculate")
