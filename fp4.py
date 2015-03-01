@@ -1,23 +1,19 @@
-import os
+import os,json
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return render_template("index.html",
-                           shown="hidden")
 
 def compensation(x):
     if x <= 0.5:
         return x
     return 66.86823338 * 1.04081939 ** x - 67.19686994
 
-@app.route("/calculate")
+@app.route("/")
 def calcualte():
-    if request.args['time']:
+    time = request.args.get('time', None)
+    if time:
         try:
-            time = float(request.args['time'])
+            time = float(time)
             return render_template('index.html',
                                    before=time,
                                    time=compensation(time),
