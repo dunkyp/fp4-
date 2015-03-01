@@ -17,6 +17,7 @@ def calcualte():
         try:
             time = float(request.args['time'])
             return render_template('index.html',
+                                   before=time,
                                    time=compensation(time),
                                    shown="visible")
         except:

@@ -1,13 +1,17 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://firezenk.github.io/zimit/css/zimit.min.css">
     <title>FP4+ Reciprocity</title>
   </head>
   <body>
-    <p id="adjusted" style="visibility: {{ shown }};">Time After Compensation: {{ time }} seconds</p>
+    <main>
+      Input measured exposure time in seconds to calculate time Adjusted for FP4+ reciporictiy failure:
     <form action="calculate">
-      <label for="time">Time in Seconds</label>
       <input type="text" name="time" id="time">
       <input type="submit">
     </form>
+    <blockquote style="visibility: {{ shown }};">{{ before }} seconds - > {{ time }} seconds</blockquote>
+    </main>
   </body>
 </html>
