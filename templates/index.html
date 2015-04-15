@@ -2,12 +2,27 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://firezenk.github.io/zimit/css/zimit.min.css">
+    <style>
+      select {
+      position: relative;
+      display: inline;
+      color: black;
+      margin-left: 0px;
+      width: auto;
+      border-width: 1px;
+      }
+    </style>
     <title>FP4+ Reciprocity</title>
   </head>
   <body>
     <main>
       Input measured exposure time in seconds to calculate time Adjusted for FP4+ reciporictiy failure:
     <form action="/">
+      <select name="stock">
+        <option value="fp4">FP4</option>
+        <option value="hp5">HP5</option>
+        <option value="portra">Portra (100/400)</option>
+      </select>
       <input type="text" name="time" id="time">
       <input type="submit">
     </form>
