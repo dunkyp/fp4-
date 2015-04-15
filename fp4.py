@@ -9,7 +9,7 @@ def ilford(x):
     return 66.86823338 * 1.04081939 ** x - 67.19686994
 
 def portra(time):
-    return time + (0.5167 * math.log(time) - 0.2006) * time
+    return time + ((0.5167 * math.log(time) - 0.2006) * time)
 
 @app.route("/")
 def calcualte():
